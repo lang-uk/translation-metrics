@@ -1,0 +1,208 @@
+{
+  "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+    "mean_distance": 1.1397527213183127
+  },
+  "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+    "mean_distance": 1.159611215500682
+  },
+  "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+    "mean_distance": 1.1373692073624615
+  },
+  "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+    "mean_distance": 1.1027189708348593
+  },
+  "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+    "mean_distance": 1.127896931890926
+  },
+  "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+    "mean_distance": 1.0947132360657579
+  },
+  "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+    "mean_distance": 1.1157189514464019
+  },
+  "gpt_5_2": {
+    "mean_distance": 1.0588645185222871
+  },
+  "lapa_translations_combine": {
+    "mean_distance": 1.0682760487914424
+  },
+  "deepl": {
+    "mean_distance": 1.0581496269231478
+  },
+  "_pairwise": {
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1984_Iryna_Dybko_Khutir_tvaryn": 0.9800023222997355,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1991_Oleksii_Drozdovskyi_Skotoferma": 1.1231187551769102,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 1.2114899037624622,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 1.188327813802049,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 1.2968564863421956,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 1.1888866139126621,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|gpt_5_2": 1.1014877452224239,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|lapa_translations_combine": 1.0284853405607748,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|deepl": 1.1391195107856011,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1991_Oleksii_Drozdovskyi_Skotoferma": 1.0033439600736904,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 1.116912181216041,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 1.0101413075710706,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 1.1629069068963411,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 1.2132975013053713,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|gpt_5_2": 1.337638365102305,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|lapa_translations_combine": 1.2952489790162898,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|deepl": 1.3170094160252923,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 1.056730836276263,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_1992_Natalia_Okolitenko_Skotokhutir": 0.9467742775046553,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 1.0843679144615863,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 1.0738991496787005,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|gpt_5_2": 1.3598305016117747,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|lapa_translations_combine": 1.2997647231994758,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|deepl": 1.288492748279097,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 0.9413842465840757,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 0.9462835582111936,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 0.9636031592001365,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|gpt_5_2": 1.1486656763713305,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|lapa_translations_combine": 1.3196176100960653,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|deepl": 1.219783565796165,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 0.9718695559011937,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 1.0397715202271272,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|gpt_5_2": 1.3706431175685394,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|lapa_translations_combine": 1.329304531245045,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|deepl": 1.3528560166145789,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 1.0181950969102445,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|gpt_5_2": 1.075580882934799,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|lapa_translations_combine": 1.1593274781332288,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|deepl": 1.1370312448010376,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|gpt_5_2": 1.069113290402109,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|lapa_translations_combine": 1.2426776110926336,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|deepl": 1.232026620288632,
+    "gpt_5_2|lapa_translations_combine": 0.5849258667744222,
+    "gpt_5_2|deepl": 0.4818952207128804,
+    "lapa_translations_combine|deepl": 0.3551322990050464
+  },
+  "_n_features": 183,
+  "_group_stats": {
+    "ai_ai_mean": 0.4739844621641163,
+    "ai_ai_std": 0.11510085152881061,
+    "hh_mean": 1.0701039258634304,
+    "hh_std": 0.11161721493466067
+  },
+  "_top_discriminating_features": [
+    {
+      "feature": "завжди",
+      "ai_z": 1.322,
+      "human_z": -0.647,
+      "diff": 1.969
+    },
+    {
+      "feature": "але",
+      "ai_z": 1.315,
+      "human_z": -0.639,
+      "diff": 1.953
+    },
+    {
+      "feature": "якщо",
+      "ai_z": 1.431,
+      "human_z": -0.521,
+      "diff": 1.952
+    },
+    {
+      "feature": "звідки",
+      "ai_z": -1.203,
+      "human_z": 0.711,
+      "diff": 1.914
+    },
+    {
+      "feature": "або",
+      "ai_z": 1.336,
+      "human_z": -0.493,
+      "diff": 1.829
+    },
+    {
+      "feature": "аж",
+      "ai_z": -1.264,
+      "human_z": 0.56,
+      "diff": 1.824
+    },
+    {
+      "feature": "і",
+      "ai_z": 1.269,
+      "human_z": -0.546,
+      "diff": 1.815
+    },
+    {
+      "feature": "інший",
+      "ai_z": 1.344,
+      "human_z": -0.393,
+      "diff": 1.738
+    },
+    {
+      "feature": "це",
+      "ai_z": 1.2,
+      "human_z": -0.513,
+      "diff": 1.714
+    },
+    {
+      "feature": "ніхто",
+      "ai_z": -1.126,
+      "human_z": 0.582,
+      "diff": 1.708
+    },
+    {
+      "feature": "хоч",
+      "ai_z": -1.22,
+      "human_z": 0.469,
+      "diff": 1.69
+    },
+    {
+      "feature": "щоб",
+      "ai_z": 1.03,
+      "human_z": -0.574,
+      "diff": 1.603
+    },
+    {
+      "feature": "то",
+      "ai_z": -1.008,
+      "human_z": 0.573,
+      "diff": 1.581
+    },
+    {
+      "feature": "звідти",
+      "ai_z": -0.947,
+      "human_z": 0.632,
+      "diff": 1.579
+    },
+    {
+      "feature": "ніж",
+      "ai_z": 1.192,
+      "human_z": -0.363,
+      "diff": 1.555
+    },
+    {
+      "feature": "зате",
+      "ai_z": -1.007,
+      "human_z": 0.527,
+      "diff": 1.533
+    },
+    {
+      "feature": "чомусь",
+      "ai_z": -0.984,
+      "human_z": 0.541,
+      "diff": 1.525
+    },
+    {
+      "feature": "деякий",
+      "ai_z": 1.02,
+      "human_z": -0.497,
+      "diff": 1.517
+    },
+    {
+      "feature": "дехто",
+      "ai_z": -0.932,
+      "human_z": 0.572,
+      "diff": 1.505
+    },
+    {
+      "feature": "ба",
+      "ai_z": -0.938,
+      "human_z": 0.565,
+      "diff": 1.503
+    }
+  ]
+}
