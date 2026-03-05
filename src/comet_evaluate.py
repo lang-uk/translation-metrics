@@ -18,11 +18,13 @@ Requirements (GPU recommended):
 """
 
 import argparse
+import gc
 import json
 import time
 from pathlib import Path
 
 import numpy as np
+import torch
 
 ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS_PATH = ROOT / "results" / "unite-models" / "parsed_translations.json"
@@ -82,12 +84,23 @@ def load_comet_model(model_path):
     return model
 
 
-def predict(model, data, batch_size=8, use_gpu=True):
+BATCH_SIZE = 4
+
+
+def predict(model, data, batch_size=None, use_gpu=True):
+    bs = batch_size or BATCH_SIZE
     gpus = 1 if use_gpu else 0
     t0 = time.time()
-    output = model.predict(data, batch_size=batch_size, gpus=gpus)
+    output = model.predict(data, batch_size=bs, gpus=gpus)
     print(f"  Predicted {len(data)} segments in {time.time() - t0:.0f}s")
     return list(output.scores)
+
+
+def unload_model(model):
+    del model
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -127,7 +140,7 @@ def task_ref_free(force=False):
             with open(result_file, "w") as f:
                 json.dump(results, f, ensure_ascii=False, indent=2)
 
-        del model
+        unload_model(model)
         print(f"  Saved → {result_file}")
 
 
@@ -180,7 +193,7 @@ def task_round_robin(force=False):
                 with open(result_file, "w") as f:
                     json.dump(results, f, ensure_ascii=False, indent=2)
 
-        del model
+        unload_model(model)
         print(f"  Saved → {result_file}")
 
 
@@ -208,12 +221,15 @@ All tasks are idempotent — existing results are preserved unless --force is se
     parser.add_argument("--task", choices=list(TASKS.keys()), help="Run a single task")
     parser.add_argument("--all", action="store_true", help="Run all tasks")
     parser.add_argument("--force", action="store_true", help="Recompute from scratch (ignore existing results)")
-    parser.add_argument("--batch-size", type=int, default=8, help="Batch size (default: 8)")
+    parser.add_argument("--batch-size", type=int, default=4, help="Batch size (default: 4)")
     args = parser.parse_args()
 
     if not args.task and not args.all:
         parser.print_help()
         return
+
+    global BATCH_SIZE
+    BATCH_SIZE = args.batch_size
 
     t_total = time.time()
 

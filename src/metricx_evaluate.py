@@ -31,7 +31,7 @@ import transformers
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "lib"))
 
-from metricx import MT5ForRegression  # noqa: E402
+from metricx_local import MT5ForRegression  # noqa: E402
 
 TRANSLATIONS_PATH = ROOT / "results" / "unite-models" / "parsed_translations.json"
 RESULTS_DIR = ROOT / "results" / "metricx"
