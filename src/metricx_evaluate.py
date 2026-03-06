@@ -24,14 +24,20 @@ import sys
 import time
 from pathlib import Path
 
+import importlib.util
+
 import numpy as np
 import torch
 import transformers
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "lib"))
 
-from metricx_local import MT5ForRegression  # noqa: E402
+_spec = importlib.util.spec_from_file_location(
+    "_metricx_models", ROOT / "lib" / "metricx_local" / "models.py"
+)
+_mod = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_mod)
+MT5ForRegression = _mod.MT5ForRegression
 
 TRANSLATIONS_PATH = ROOT / "results" / "unite-models" / "parsed_translations.json"
 RESULTS_DIR = ROOT / "results" / "metricx"
