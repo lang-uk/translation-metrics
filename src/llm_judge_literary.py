@@ -33,7 +33,7 @@ from openai import OpenAI
 ROOT = Path(__file__).resolve().parent.parent
 TRANSLATIONS_PATH = ROOT / "results" / "unite-models" / "parsed_translations.json"
 SYSTEM_KEY_PATH = ROOT / "human_eval" / "system_key.json"
-RESULTS_DIR = ROOT / "results" / "llm_judge"
+RESULTS_DIR = ROOT / "results" / "llm_judge_literary"
 RAW_JSONL = RESULTS_DIR / "raw_judgments.jsonl"
 CHECKPOINTS_FILE = RESULTS_DIR / "checkpoints.json"
 
@@ -67,19 +67,14 @@ DEFAULT_CHECKPOINT = 100
 # ── Prompt ──────────────────────────────────────────────────────────
 
 SYSTEM_PROMPT = """\
-You are an expert literary Ukrainian translator evaluating translation quality.
-You will be given one English sentence and two Ukrainian translations.
-Choose the better translation.
+You are an expert in Ukrainian literature. You will be given two Ukrainian sentences.
+Choose the one that sounds more literary — as if written by a skilled Ukrainian \
+author for a published book.
 
-How to decide:
-1. Meaning preservation — Does the translation convey the core meaning and intent \
-of the English sentence? Minor additions or omissions are acceptable if they \
-improve naturalness or style.
-2. Fluency and literary quality — Which translation reads more natural, expressive, \
-and appropriate for literary Ukrainian?
+Judge only literary quality: naturalness, expressiveness, and stylistic richness \
+of the Ukrainian language.
 
 Rules:
-• Prefer the translation that best balances intent and natural literary expression.
 • Use "tie" only if you genuinely cannot decide.
 • Judge each sentence independently.
 • Ignore punctuation differences unless they affect readability.
@@ -87,8 +82,6 @@ Rules:
 Respond with EXACTLY one of these three words: system1, system2, tie"""
 
 USER_TEMPLATE = """\
-English: {english}
-
 system1: {system1}
 
 system2: {system2}"""
@@ -144,10 +137,10 @@ def build_pair_pool(valid_segments):
     return pool
 
 
-def call_judge(client, english, sys1_text, sys2_text, retries=3):
+def call_judge(client, sys1_text, sys2_text, retries=3):
     """Call LLM and return 'system1', 'system2', or 'tie'."""
     user_msg = USER_TEMPLATE.format(
-        english=english, system1=sys1_text, system2=sys2_text,
+        system1=sys1_text, system2=sys2_text,
     )
     for attempt in range(retries):
         try:
@@ -315,15 +308,13 @@ def run_evaluation(max_pairs, checkpoint_every):
         if (seg_idx, canon[0], canon[1]) in done:
             continue
 
-        en_text = trans[EN_KEY][seg_idx]
-
         swap = pair_rng.random() < 0.5
         if swap:
             left, right = sys_b, sys_a
         else:
             left, right = sys_a, sys_b
 
-        verdict = call_judge(client, en_text, trans[left][seg_idx], trans[right][seg_idx])
+        verdict = call_judge(client, trans[left][seg_idx], trans[right][seg_idx])
 
         record = {
             "segment_index": seg_idx,
