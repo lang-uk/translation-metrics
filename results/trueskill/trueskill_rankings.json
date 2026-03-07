@@ -1,0 +1,383 @@
+{
+  "Human Eval": {
+    "n_matches": 449,
+    "trueskill": {
+      "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+        "mu": 27.94788609342411,
+        "sigma": 0.9035243309762002,
+        "conservative": 26.14083743147171
+      },
+      "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+        "mu": 26.095520537777617,
+        "sigma": 0.8867193652243643,
+        "conservative": 24.32208180732889
+      },
+      "gpt_5_2": {
+        "mu": 25.93023839882932,
+        "sigma": 0.8416957735664371,
+        "conservative": 24.246846851696446
+      },
+      "deepl": {
+        "mu": 25.91494486356923,
+        "sigma": 0.9302256869503397,
+        "conservative": 24.05449348966855
+      },
+      "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+        "mu": 25.442865009436783,
+        "sigma": 0.8705763354150828,
+        "conservative": 23.70171233860662
+      },
+      "lapa_translations_combine": {
+        "mu": 25.349559145516093,
+        "sigma": 0.840568467298738,
+        "conservative": 23.668422210918617
+      },
+      "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+        "mu": 23.969958893070675,
+        "sigma": 0.8628467842340032,
+        "conservative": 22.24426532460267
+      },
+      "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+        "mu": 23.781821148223685,
+        "sigma": 0.9131444796072183,
+        "conservative": 21.955532189009247
+      },
+      "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+        "mu": 23.243561524923393,
+        "sigma": 0.8753056733353457,
+        "conservative": 21.492950178252702
+      },
+      "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+        "mu": 18.532676104002523,
+        "sigma": 1.030358784398532,
+        "conservative": 16.47195853520546
+      }
+    },
+    "win_rates": {
+      "deepl": {
+        "wins": 30,
+        "losses": 15,
+        "ties": 28,
+        "total": 73,
+        "win_rate": 0.410958904109589
+      },
+      "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+        "wins": 51,
+        "losses": 8,
+        "ties": 28,
+        "total": 87,
+        "win_rate": 0.5862068965517241
+      },
+      "lapa_translations_combine": {
+        "wins": 44,
+        "losses": 30,
+        "ties": 30,
+        "total": 104,
+        "win_rate": 0.4230769230769231
+      },
+      "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+        "wins": 36,
+        "losses": 22,
+        "ties": 27,
+        "total": 85,
+        "win_rate": 0.4235294117647059
+      },
+      "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+        "wins": 27,
+        "losses": 39,
+        "ties": 17,
+        "total": 83,
+        "win_rate": 0.3253012048192771
+      },
+      "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+        "wins": 4,
+        "losses": 79,
+        "ties": 13,
+        "total": 96,
+        "win_rate": 0.041666666666666664
+      },
+      "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+        "wins": 28,
+        "losses": 42,
+        "ties": 22,
+        "total": 92,
+        "win_rate": 0.30434782608695654
+      },
+      "gpt_5_2": {
+        "wins": 38,
+        "losses": 19,
+        "ties": 40,
+        "total": 97,
+        "win_rate": 0.3917525773195876
+      },
+      "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+        "wins": 29,
+        "losses": 32,
+        "ties": 32,
+        "total": 93,
+        "win_rate": 0.3118279569892473
+      },
+      "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+        "wins": 27,
+        "losses": 28,
+        "ties": 33,
+        "total": 88,
+        "win_rate": 0.3068181818181818
+      }
+    }
+  },
+  "LLM Judge (translation)": {
+    "n_matches": 497,
+    "trueskill": {
+      "gpt_5_2": {
+        "mu": 30.751119711961056,
+        "sigma": 0.915426516665497,
+        "conservative": 28.920266678630064
+      },
+      "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+        "mu": 30.07937288488907,
+        "sigma": 0.976438732560846,
+        "conservative": 28.12649541976738
+      },
+      "deepl": {
+        "mu": 28.91063720192225,
+        "sigma": 1.013131107037259,
+        "conservative": 26.884374987847732
+      },
+      "lapa_translations_combine": {
+        "mu": 27.781060046385218,
+        "sigma": 0.9672690608203427,
+        "conservative": 25.846521924744533
+      },
+      "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+        "mu": 26.461883010117592,
+        "sigma": 0.9602800125009918,
+        "conservative": 24.54132298511561
+      },
+      "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+        "mu": 25.302879255111183,
+        "sigma": 0.9360735344038033,
+        "conservative": 23.430732186303576
+      },
+      "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+        "mu": 23.552199156991882,
+        "sigma": 0.9508912117172483,
+        "conservative": 21.650416733557385
+      },
+      "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+        "mu": 23.108249179986363,
+        "sigma": 0.9584161291982686,
+        "conservative": 21.191416921589827
+      },
+      "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+        "mu": 21.858327021120218,
+        "sigma": 0.9863883041001488,
+        "conservative": 19.88555041291992
+      },
+      "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+        "mu": 13.03093692605057,
+        "sigma": 1.5022546224495121,
+        "conservative": 10.026427681151546
+      }
+    },
+    "win_rates": {
+      "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+        "wins": 33,
+        "losses": 69,
+        "ties": 0,
+        "total": 102,
+        "win_rate": 0.3235294117647059
+      },
+      "deepl": {
+        "wins": 64,
+        "losses": 26,
+        "ties": 1,
+        "total": 91,
+        "win_rate": 0.7032967032967034
+      },
+      "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+        "wins": 44,
+        "losses": 59,
+        "ties": 0,
+        "total": 103,
+        "win_rate": 0.42718446601941745
+      },
+      "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+        "wins": 51,
+        "losses": 46,
+        "ties": 0,
+        "total": 97,
+        "win_rate": 0.5257731958762887
+      },
+      "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+        "wins": 3,
+        "losses": 88,
+        "ties": 0,
+        "total": 91,
+        "win_rate": 0.03296703296703297
+      },
+      "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+        "wins": 34,
+        "losses": 63,
+        "ties": 0,
+        "total": 97,
+        "win_rate": 0.35051546391752575
+      },
+      "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+        "wins": 72,
+        "losses": 27,
+        "ties": 1,
+        "total": 100,
+        "win_rate": 0.72
+      },
+      "gpt_5_2": {
+        "wins": 84,
+        "losses": 30,
+        "ties": 3,
+        "total": 117,
+        "win_rate": 0.717948717948718
+      },
+      "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+        "wins": 49,
+        "losses": 51,
+        "ties": 0,
+        "total": 100,
+        "win_rate": 0.49
+      },
+      "lapa_translations_combine": {
+        "wins": 60,
+        "losses": 35,
+        "ties": 1,
+        "total": 96,
+        "win_rate": 0.625
+      }
+    }
+  },
+  "LLM Judge (literary)": {
+    "n_matches": 499,
+    "trueskill": {
+      "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+        "mu": 29.444545600120325,
+        "sigma": 0.9677706244426973,
+        "conservative": 27.50900435123493
+      },
+      "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+        "mu": 28.945922554316724,
+        "sigma": 0.9297701695542785,
+        "conservative": 27.086382215208168
+      },
+      "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+        "mu": 28.532207187447533,
+        "sigma": 0.9423162666683739,
+        "conservative": 26.647574654110784
+      },
+      "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+        "mu": 25.644324290466987,
+        "sigma": 0.8964979813800649,
+        "conservative": 23.851328327706856
+      },
+      "gpt_5_2": {
+        "mu": 25.30730543599892,
+        "sigma": 0.87729677195309,
+        "conservative": 23.55271189209274
+      },
+      "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+        "mu": 25.13575384256111,
+        "sigma": 0.9126818507942347,
+        "conservative": 23.31039014097264
+      },
+      "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+        "mu": 24.045306333585717,
+        "sigma": 0.9095703552737693,
+        "conservative": 22.226165623038177
+      },
+      "deepl": {
+        "mu": 22.288355909641176,
+        "sigma": 0.947174949436211,
+        "conservative": 20.394006010768756
+      },
+      "lapa_translations_combine": {
+        "mu": 21.161847544742148,
+        "sigma": 0.9764688618591197,
+        "conservative": 19.20890982102391
+      },
+      "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+        "mu": 19.990096023421557,
+        "sigma": 0.9897589370964788,
+        "conservative": 18.0105781492286
+      }
+    },
+    "win_rates": {
+      "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+        "wins": 74,
+        "losses": 28,
+        "ties": 0,
+        "total": 102,
+        "win_rate": 0.7254901960784313
+      },
+      "deepl": {
+        "wins": 30,
+        "losses": 60,
+        "ties": 1,
+        "total": 91,
+        "win_rate": 0.32967032967032966
+      },
+      "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+        "wins": 68,
+        "losses": 29,
+        "ties": 0,
+        "total": 97,
+        "win_rate": 0.7010309278350515
+      },
+      "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+        "wins": 56,
+        "losses": 47,
+        "ties": 0,
+        "total": 103,
+        "win_rate": 0.5436893203883495
+      },
+      "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+        "wins": 20,
+        "losses": 71,
+        "ties": 0,
+        "total": 91,
+        "win_rate": 0.21978021978021978
+      },
+      "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+        "wins": 51,
+        "losses": 47,
+        "ties": 0,
+        "total": 98,
+        "win_rate": 0.5204081632653061
+      },
+      "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+        "wins": 76,
+        "losses": 24,
+        "ties": 1,
+        "total": 101,
+        "win_rate": 0.7524752475247525
+      },
+      "gpt_5_2": {
+        "wins": 55,
+        "losses": 60,
+        "ties": 3,
+        "total": 118,
+        "win_rate": 0.4661016949152542
+      },
+      "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+        "wins": 42,
+        "losses": 58,
+        "ties": 0,
+        "total": 100,
+        "win_rate": 0.42
+      },
+      "lapa_translations_combine": {
+        "wins": 24,
+        "losses": 72,
+        "ties": 1,
+        "total": 97,
+        "win_rate": 0.24742268041237114
+      }
+    }
+  }
+}
