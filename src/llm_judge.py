@@ -360,7 +360,7 @@ def run_evaluation(max_pairs, checkpoint_every):
             with open(CHECKPOINTS_FILE, "w") as f:
                 json.dump(checkpoints, f, indent=2, ensure_ascii=False)
 
-            if prev_stats and delta < 1.0 and n_judged >= 200:
+            if prev_stats and delta < 1.0 and n_judged >= 200 and n_judged <= 500:
                 print(f"\n  ** Win rates stabilised (max Δ < 1pp) at {n_judged} pairs **")
                 prev_stats = stats
                 break

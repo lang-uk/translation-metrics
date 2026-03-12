@@ -22,7 +22,7 @@ import trueskill
 
 ROOT = Path(__file__).resolve().parent.parent
 
-HUMAN_EVAL_PATH = ROOT / "human_eval" / "arena_task.__all__.incomplete.jsonl"
+HUMAN_EVAL_PATH = ROOT / "human_eval" / "arena_task.__all__.incomplete_2.jsonl"
 SYSTEM_KEY_PATH = ROOT / "human_eval" / "system_key.json"
 LLM_JUDGE_PATH = ROOT / "results" / "llm_judge" / "raw_judgments.jsonl"
 LLM_LITERARY_PATH = ROOT / "results" / "llm_judge_literary" / "raw_judgments.jsonl"
