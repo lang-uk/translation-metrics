@@ -255,32 +255,34 @@ The judge sees only two Ukrainian sentences and picks the one that "sounds more 
 
 ### The Reversal
 
-| Rank | Metrics (COMETKiwi-22) | LLM Judge: Translation | LLM Judge: Literary | Human Eval (prelim.) |
+| Rank | Metrics (COMETKiwi-22) | LLM Judge: Translation | LLM Judge: Literary | Human Eval |
 |------|------------------------|----------------------|-------------------|---------------------|
-| 1 | **LaPa** (0.820) | **GPT-5.2** (30.8) | Stelmakh 2021 (29.4) | Stelmakh 2021 (27.9) |
-| 2 | **GPT-5.2** (0.812) | Stelmakh 2021 (30.1) | Drozdovskyi 1991 (28.9) | Shevchuk 1991 (26.1) |
-| 3 | **DeepL** (0.805) | **DeepL** (28.9) | Shevchuk 1991 (28.5) | **GPT-5.2** (25.9) |
-| 4 | Stelmakh 2021 (0.775) | **LaPa** (27.8) | Nosenok 2020 (25.6) | **DeepL** (25.9) |
-| 5 | Shevchuk 1991 (0.738) | Shevchuk 1991 (26.5) | **GPT-5.2** (25.3) | Drozdovskyi 1991 (25.4) |
-| 6 | Cherniatynskyi 1947 (0.738) | Cherniatynskyi 1947 (25.3) | Okolitenko 1992 (25.1) | **LaPa** (25.3) |
-| 7 | Nosenok 2020 (0.727) | Nosenok 2020 (23.6) | Cherniatynskyi 1947 (24.0) | Cherniatynskyi 1947 (24.0) |
-| 8 | Drozdovskyi 1991 (0.693) | Drozdovskyi 1991 (23.1) | **DeepL** (22.3) | Nosenok 2020 (23.8) |
-| 9 | Okolitenko 1992 (0.672) | Okolitenko 1992 (21.9) | **LaPa** (21.2) | Okolitenko 1992 (23.2) |
-| 10 | Dybko 1984 (0.541) | Dybko 1984 (13.0) | Dybko 1984 (20.0) | Dybko 1984 (18.5) |
+| 1 | **LaPa** (0.820) | **GPT-5.2** (30.3) | Drozdovskyi 1991 (29.5) | Stelmakh 2021 (27.3) |
+| 2 | **GPT-5.2** (0.812) | Stelmakh 2021 (29.8) | Stelmakh 2021 (28.6) | Shevchuk 1991 (26.4) |
+| 3 | **DeepL** (0.805) | **DeepL** (29.2) | Shevchuk 1991 (26.6) | **DeepL** (26.4) |
+| 4 | Stelmakh 2021 (0.775) | **LaPa** (27.4) | Okolitenko 1992 (25.2) | **GPT-5.2** (25.6) |
+| 5 | Shevchuk 1991 (0.738) | Shevchuk 1991 (26.7) | Nosenok 2020 (24.7) | **LaPa** (25.4) |
+| 6 | Cherniatynskyi 1947 (0.738) | Cherniatynskyi 1947 (25.0) | **GPT-5.2** (24.4) | Drozdovskyi 1991 (25.0) |
+| 7 | Nosenok 2020 (0.727) | Drozdovskyi 1991 (24.0) | Cherniatynskyi 1947 (24.3) | Cherniatynskyi 1947 (24.4) |
+| 8 | Drozdovskyi 1991 (0.693) | Nosenok 2020 (23.5) | **DeepL** (23.8) | Nosenok 2020 (24.4) |
+| 9 | Okolitenko 1992 (0.672) | Okolitenko 1992 (21.4) | **LaPa** (22.4) | Okolitenko 1992 (23.1) |
+| 10 | Dybko 1984 (0.541) | Dybko 1984 (13.9) | Dybko 1984 (21.4) | Dybko 1984 (18.2) |
 
-*TrueSkill μ scores shown. Bold = AI systems.*
+*TrueSkill μ scores shown. Bold = AI systems. LLM judge: ~750 pairs each. Human eval: 762 matches.*
 
 **Key observations:**
 
 1. **When the source is visible** (Exp. 1), the LLM judge agrees with metrics: GPT-5.2 ranks #1, all three AI in top 4. The judge is measuring the same thing the metrics measure — semantic fidelity.
 
-2. **When the source is hidden** (Exp. 2), AI systems collapse: GPT-5.2 drops from #1 to #5, DeepL from #3 to #8, LaPa from #4 to #9. Human translators (Stelmakh, Drozdovskyi, Shevchuk) take the top 3.
+2. **When the source is hidden** (Exp. 2), AI systems collapse: GPT-5.2 drops from #1 to #6, DeepL from #3 to #8, LaPa from #4 to #9. Human translators take the top 5 positions — led by Drozdovskyi (#8 on metrics → #1 on literary judge).
 
-3. **Human eval** (preliminary, 449 matches) tracks the literary judge more closely than the translation judge. Stelmakh tops both human eval and the literary judge. AI systems land mid-pack in human eval — not terrible, but not top-ranked either.
+3. **Human eval** (762 matches) tracks the literary judge more closely than the translation judge. Stelmakh tops human eval. AI systems land mid-pack — DeepL at #3, GPT-5.2 at #4, LaPa at #5.
 
 4. **Dybko is universally last** across all four rankings, confirming her role as a sanity check.
 
-5. **Stelmakh is universally first or near-first** in every human/literary ranking — the translator whose style most resembles "modern quality" while retaining genuine Ukrainian literary voice.
+5. **Drozdovskyi is the sharpest reversal** — #8 on COMETKiwi-22, #7 on translation judge, but #1 on literary judge. His particle-rich, diminutive-heavy style is exactly what metrics penalize and literary judgment rewards.
+
+6. **Stelmakh is universally first or near-first** in every human/literary ranking — the translator who combines genuine Ukrainian literary voice with enough source fidelity to place #4 on metrics.
 
 ![TrueSkill comparison across all three sources](plots/trueskill/trueskill_comparison.png)
 

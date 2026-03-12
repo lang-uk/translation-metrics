@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Automatic machine translation metrics — COMET, XCOMET, COMETKiwi, MetricX-24 — are the de facto standard for evaluating translation quality. But what do they actually measure? We investigate this question using a unique multilingual corpus: seven human Ukrainian translations of George Orwell's *Animal Farm* spanning 74 years (1947–2021), alongside three architecturally distinct AI systems (GPT-5.2, DeepL, and LaPa, a Ukrainian-tuned LLM). Across seven neural metrics, four reference-free and three reference-based, all three AI translations rank at the top. Yet stylometric analysis reveals that these same AI translations are lexically impoverished (−18% MTLD), underuse Ukrainian discourse particles (up to 2× fewer) and diminutive morphology (2.6× fewer), and converge on near-identical output (LaBSE pairwise similarity 0.941 vs. 0.711 for human pairs). A controlled LLM-as-a-judge experiment demonstrates a clean preference reversal: when the English source is visible, AI ranks first; when it is hidden and the judge evaluates literary quality alone, humans rise to the top and AI sinks. Preliminary human evaluation confirms this pattern. We argue that current MT metrics reward semantic fidelity and surface fluency — properties AI systems optimize for — while failing to capture the lexical richness, cultural adaptation, and stylistic voice that define skilled literary translation.
+Automatic machine translation metrics — COMET, XCOMET, COMETKiwi, MetricX-24 — are the de facto standard for evaluating translation quality. But what do they actually measure? We investigate this question using a unique multilingual corpus: seven human Ukrainian translations of George Orwell's *Animal Farm* spanning 74 years (1947–2021), alongside three architecturally distinct AI systems (GPT-5.2, DeepL, and LaPa, a Ukrainian-tuned LLM). Across seven neural metrics, four reference-free and three reference-based, all three AI translations rank at the top. Yet stylometric analysis reveals that these same AI translations are lexically impoverished (−18% MTLD), underuse Ukrainian discourse particles (up to 2× fewer) and diminutive morphology (2.6× fewer), and converge on near-identical output (LaBSE pairwise similarity 0.941 vs. 0.711 for human pairs). A controlled LLM-as-a-judge experiment (750 pairs per condition) demonstrates a clean preference reversal: when the English source is visible, AI ranks first; when it is hidden and the judge evaluates literary quality alone, humans rise to the top and AI sinks. Human evaluation (1,034 pairwise judgments) confirms this pattern. We argue that current MT metrics reward semantic fidelity and surface fluency — properties AI systems optimize for — while failing to capture the lexical richness, cultural adaptation, and stylistic voice that define skilled literary translation.
 
 ---
 
@@ -30,7 +30,7 @@ Our contributions:
 
 ### 2.1 Neural MT Metrics
 
-COMET (Rei et al., 2020) pioneered the use of pretrained cross-lingual encoders for MT evaluation, training regression models on Direct Assessment (DA) human judgments. Subsequent work expanded this approach: COMETKiwi (Rei et al., 2022) removed the need for reference translations; XCOMET (Guerreiro et al., 2023) scaled to larger models; MetricX (Juraska et al., 2024) applied instruction-tuned language models to the task. These metrics dominate the WMT Metrics Shared Task and have become standard in MT research. However, their training data is drawn almost exclusively from news and technical domains, and their meta-evaluation is conducted on the same domain distribution.
+COMET (Rei et al., 2020) pioneered the use of pretrained cross-lingual encoders for MT evaluation, training regression models on Direct Assessment (DA) human judgments. Subsequent work expanded this approach: COMETKiwi (Rei et al., 2022) removed the need for reference translations; XCOMET (Guerreiro et al., 2023) scaled to larger models; MetricX (Juraska et al., 2024) applied instruction-tuned language models to the task. These metrics dominate the WMT Metrics Shared Task and have become standard in MT research. However, their training data is drawn almost exclusively from news and technical domains, and their meta-evaluation is conducted on the same domain distribution. Even for general-domain English–Ukrainian parallel data, Chaplynskyi and Zakharov (2025) found that an ensemble of six QE models explains only ~60% of the variance in human quality judgments, with a non-linear relationship between metric scores and human perception — suggesting that the gap widens further for literary text.
 
 ### 2.2 Literary Translation and MT
 
@@ -115,197 +115,131 @@ We conduct two controlled experiments using GPT-5.2 as the judge, with pairwise 
 
 The only difference between experiments is the presence/absence of the English source and the framing of the quality criterion. By comparing the resulting TrueSkill rankings, we isolate the effect of source fidelity on quality judgment.
 
-For both experiments, we generate all 45 pairwise system combinations per segment, sample uniformly, shuffle globally, and evaluate ~500 pairs each. TrueSkill ratings are computed with default parameters (μ₀ = 25, σ₀ = 25/3).
+### 4.5 Sampling Design and Human Evaluation
 
-### 4.5 Human Evaluation
+All three evaluations — both LLM judge experiments and the human evaluation — draw from the same pool: 1,128 valid segments × 45 system pairs = 50,760 items, globally shuffled with a fixed seed. This ensures that even early subsets cover all 45 system pairs approximately uniformly. Left/right presentation order is randomized per pair to control for position bias. TrueSkill ratings (Herbrich et al., 2006) are computed with default parameters (μ₀ = 25, σ₀ = 25/3).
 
-We adopt a pairwise preference tournament following Romanyshyn et al. (2024). Annotators see the English source and two anonymized Ukrainian translations, then select *Left is better*, *Right is better*, or *Tie*. TrueSkill ratings aggregate the judgments into a system-level leaderboard. Preliminary results (449 matches, ongoing) are reported.
+For the LLM judge, ~750 pairs were evaluated per experiment (~17 judgments per system pair). Rankings stabilized between the 500- and 750-pair checkpoints (max win-rate delta < 1 percentage point).
+
+For the human evaluation, we adopt the pairwise preference tournament of Romanyshyn et al. (2024). Annotators see the English source and two anonymized Ukrainian translations, then select *Left is better*, *Right is better*, or *Tie*. Each pair is judged by one annotator. At 1,034 matches, each system participates in ~207 comparisons (σ ≈ 0.75–0.77 for most systems), with the top (Stelmakh) and bottom (Dybko) clearly separated and a compressed mid-pack (§5.4).
 
 ---
 
 ## 5. Results
 
-### 5.1 Neural Metrics: AI Ranks First on Every Metric
+We present results in four stages. First, we establish that every automatic metric ranks AI at the top (§5.1). Second, we show that these AI translations are near-identical to each other and unusually close to the English source (§5.2). Third, we demonstrate that the same AI translations are systematically impoverished on every dimension of Ukrainian literary expressiveness (§5.3). Finally, we show that removing the English source from the evaluation reverses the ranking entirely (§5.4).
 
-**Reference-free metrics.** Four reference-free neural metrics, each using a different model architecture, produce the same ranking: AI systems occupy the top three positions; Dybko (the cultural adaptation) ranks last.
+### 5.1 Every Metric Says AI Wins
 
-| Rank | System | COMETKiwi-22 | COMETKiwi-XL | XCOMET-XXL | MetricX-24 QE |
-|------|--------|:---:|:---:|:---:|:---:|
-| 1 | **LaPa** | 0.820 | 0.717 | 0.880 | **3.30** |
-| 2 | **GPT-5.2** | 0.812 | 0.711 | 0.889 | **3.50** |
-| 3 | **DeepL** | 0.805 | 0.697 | 0.907 | **3.65** |
-| 4 | Stelmakh 2021 | 0.775 | 0.651 | 0.781 | 4.28 |
-| 5 | Shevchuk 1991 | 0.738 | 0.580 | 0.714 | 5.29 |
-| 6 | Cherniatynskyi 1947 | 0.738 | 0.574 | 0.693 | 5.60 |
-| 7 | Nosenok 2020 | 0.727 | 0.577 | 0.714 | 5.24 |
-| 8 | Drozdovskyi 1991 | 0.693 | 0.553 | 0.644 | 5.61 |
-| 9 | Okolitenko 1992 | 0.672 | 0.500 | 0.647 | 6.70 |
-| 10 | Dybko 1984 | 0.541 | 0.307 | 0.375 | 11.19 |
+We computed four reference-free and three round-robin reference-based neural metrics across all ten systems. The result is unambiguous: **all three AI systems occupy the top three positions on every metric**. The best human translator (Stelmakh, 2021) consistently ranks fourth.
 
-*Table 1. Reference-free metric scores. COMETKiwi/XCOMET: higher = better. MetricX-24 QE: lower = better. Bold = AI systems.*
+On COMETKiwi-22, AI systems average 0.812 vs. 0.724 for humans (excluding Dybko) — a gap of +0.088. On MetricX-24 QE (where lower is better), AI averages 3.48 vs. humans' 5.45. The gap holds across COMETKiwi-XL, XCOMET-XXL, and all three round-robin metrics (COMET-22, XCOMET, MetricX-24). No metric ranks any human translator above any AI system.
 
-The AI group averages 0.812 on COMETKiwi-22 vs. 0.724 for humans (excluding Dybko), a gap of +0.088. On MetricX-24 QE, AI averages 3.48 vs. humans' 5.45 — metrics rate AI translations as nearly twice as good. The gap is consistent across all four metrics and all three AI systems, despite their different architectures.
+[ref_free_comparison.png]
 
-Notably, LaPa — fine-tuned specifically for Ukrainian literary translation — tops COMETKiwi rankings but the margin over GPT-5.2 (a general-purpose LLM) is only 0.008. Domain tuning yields negligible improvement on these metrics.
+[round_robin_comparison.png]
 
-**Round-robin reference-based metrics.** When each translation is scored using every other translation as a pseudo-reference, the same hierarchy holds (Table 2).
+LaPa — fine-tuned specifically for Ukrainian literary translation — tops the COMETKiwi rankings, but the margin over GPT-5.2 (a general-purpose LLM) is 0.008. Domain tuning yields negligible improvement on metric scores.
 
-| Rank | System | COMET-22 | XCOMET | MetricX-24 |
-|------|--------|:---:|:---:|:---:|
-| 1 | **GPT-5.2** | 0.816 | 0.794 | **4.68** |
-| 2 | **DeepL** | 0.813 | 0.818 | **4.30** |
-| 3 | **LaPa** | 0.813 | 0.784 | **4.77** |
-| 4 | Stelmakh 2021 | 0.790 | 0.716 | 5.19 |
-| 5–9 | Other humans | 0.738–0.779 | 0.439–0.702 | 6.32–12.94 |
+Dybko (1984), our sanity check, ranks dead last on every metric. Her free cultural adaptation departs so far from the source that metrics penalize it maximally. This confirms the metrics are sensitive; the question is what they are sensitive *to*.
 
-*Table 2. Round-robin reference-based metric scores (mean across nine pseudo-references).*
+### 5.2 AI Systems Converge on the Same Translation
 
-The round-robin design also functions as a convergence measure (Section 5.3).
+The round-robin heatmaps reveal a striking visual pattern. The 3×3 AI-AI block (bottom-right) is uniformly hot — the highest pairwise scores in the entire matrix — while the 7×7 human-human block shows much more variation. Dybko's row is cold throughout.
 
-### 5.2 Semantic Similarity and Source Literalness
+[heatmap_xcomet.png]
 
-LaBSE cross-lingual embeddings (1,142 segments) reveal the structural relationship between translations:
+[heatmap_metricx_24.png]
 
-| Pair type | Mean cosine similarity | N pairs |
-|-----------|:---:|:---:|
-| AI–AI | **0.941** | 3 |
-| Human–AI | 0.782 | 21 |
-| Human–Human | 0.711 | 21 |
+We quantify this convergence across five independent measures:
 
-*Table 3. Mean pairwise LaBSE cosine similarity by group.*
+| Measure | AI–AI | Human–Human | Gap |
+|---------|:-----:|:-----------:|:---:|
+| LaBSE cosine similarity | **0.941** | 0.711 | +0.230 |
+| XCOMET round-robin | **0.886** | 0.627 | +0.259 |
+| COMET-22 round-robin | **0.881** | 0.750 | +0.131 |
+| MetricX-24 round-robin | **3.38** | 7.61 | −4.23 |
+| chrF (surface overlap) | **43.1** | 33.7 | +9.4 |
 
-The convergence gap is +0.230: AI systems are 23 points more similar to each other than humans are to each other. The individual AI–AI pairs — LaPa–DeepL (0.952), GPT-5.2–DeepL (0.940), LaPa–GPT-5.2 (0.932) — represent near-identical translations with minor surface variation.
+*Table 1. AI–AI vs. Human–Human pairwise scores. For MetricX-24, lower = more similar. Bold = more similar group.*
 
-AI systems are also measurably closer to the English source:
+The individual AI–AI LaBSE pairs — LaPa–DeepL (0.952), GPT-5.2–DeepL (0.940), LaPa–GPT-5.2 (0.932) — represent near-identical translations. The convergence holds on every measure, from neural embeddings to raw character n-grams. Three architecturally distinct systems have arrived at the same output.
 
-| System | Sim. to source |
-|--------|:---:|
-| LaPa | 0.856 |
-| DeepL | 0.849 |
-| GPT-5.2 | 0.845 |
-| Best human (Cherniatynskyi) | 0.783 |
-| Human avg (excl. Dybko) | 0.733 |
+[convergence_round_robin.png]
 
-*Table 4. LaBSE cosine similarity to the English source.*
+AI systems are also measurably closer to the English source than any human translator. On LaBSE, all three AI systems exceed 0.845 similarity to the source; the closest human (Cherniatynskyi, 1947) reaches 0.783. The human average (excluding Dybko) is 0.733. AI translations are structurally more "English" than any human translation.
 
-All AI systems exceed 0.845; the closest human translator (Cherniatynskyi, 0.783) is 6.2 points below. AI translations are measurably more "English" in their semantic structure than any human translation.
+[source_similarity.png]
 
-### 5.3 AI Convergence
+[pairwise_heatmap.png]
 
-The convergence pattern is confirmed by multiple independent measures. Round-robin neural metrics, designed to measure translation quality against references, double as a convergence probe: when two systems score high against each other, they are producing similar output.
+### 5.3 What the Metrics Miss: Stylometric Analysis
 
-| Metric | AI–AI | Human–Human | Gap |
-|--------|:---:|:---:|:---:|
-| COMET-22 | 0.881 | 0.750 | +0.131 |
-| XCOMET | 0.886 | 0.627 | +0.259 |
-| MetricX-24 | 3.38 | 7.61 | −4.23 |
-| LaBSE | 0.941 | 0.711 | +0.230 |
-| chrF | 43.1 | 33.7 | +9.4 |
+The same AI translations that dominate every metric are systematically impoverished on every dimension of Ukrainian literary expressiveness.
 
-*Table 5. Convergence measures: AI–AI vs. Human–Human pairwise scores across five metrics.*
+**Lexical diversity.** AI systems average an MTLD of 311 vs. 377 for humans (excluding Dybko) — an 18% gap. DeepL (301) and LaPa (303) fall below every human translator except Dybko. The hapax ratio (words used exactly once) tells the same story: AI 0.182 vs. human 0.215, a 15% deficit. AI translations cycle through a narrower vocabulary, concentrating 39.4% of their text in the 100 most common words (vs. 37.7% for humans).
 
-The convergence is remarkably consistent. On XCOMET, AI–AI pairs score 0.886 while human–human pairs score 0.627 — a 41% relative increase. On chrF, a surface-level metric with no neural component, the same pattern holds: AI systems share more character n-grams with each other (43.1) than humans do with each other (33.7).
+[lexical_diversity.png]
 
-Three architecturally distinct systems — a general LLM (GPT-5.2), a commercial NMT system (DeepL), and a domain-tuned LLM (LaPa) — have converged on essentially the same translation. This suggests the convergence is not a model-specific artifact but a structural property of AI translation: these systems optimize for the same objective (source fidelity and target fluency), trained on overlapping data distributions, and arrive at the same solution.
+**Discourse particles.** Ukrainian discourse particles (ж, таки, ось, бо, аж, ну, мов, наче) encode pragmatic nuances — emphasis, surprise, hedging — with no direct English equivalents. They must be *added* by the translator. GPT-5.2 and DeepL produce approximately 2× fewer particles than the human average. LaPa partially closes the frequency gap thanks to Ukrainian fine-tuning, but concentrates overwhelmingly on a single particle (та) — a sign of pattern memorization, not pragmatic competence.
 
-### 5.4 Stylometric Analysis
+[discourse_particles.png]
 
-While neural metrics reward AI translations, stylometric analysis reveals systematic deficits in Ukrainian literary expressiveness.
+**Diminutive morphology.** Diminutive suffixes (-еньк-, -очк-, -ик, -оньк-) are a core expressive device in Ukrainian, signaling affection, irony, or intimacy. AI systems average 0.47 diminutives per thousand tokens; humans average 1.23 — a **2.6× gap**. All three AI systems rank at the bottom, below every human translator. LaPa, despite literary fine-tuning, is indistinguishable from GPT-5.2 and DeepL on this measure.
 
-#### 5.4.1 Lexical Diversity
+[diminutives.png]
 
-| Metric | AI avg | Human avg (excl. Dybko) | Gap |
-|--------|:---:|:---:|:---:|
-| MTLD | 311 | 377 | −18% |
-| MATTR | 0.844 | 0.857 | −1.5% |
-| Hapax ratio | 0.182 | 0.215 | −15% |
-| Top-100 concentration | 0.394 | 0.377 | +4.5% |
+**Cosine Delta (stylometric fingerprint).** Using function-word lemma frequencies — content-independent markers of translatorial voice — Cosine Delta (Evert et al., 2017) measures how stylistically distinct each system is from the others. AI systems have the smallest mean pairwise distance (DeepL 1.058, GPT-5.2 1.059, LaPa 1.068), placing them closest to each other and to the corpus centroid. Human translators range from 1.095 (Nosenok) to 1.160 (Dybko). By this measure, AI systems occupy the same narrow corner of the stylistic space.
 
-*Table 6. Lexical diversity measures by group.*
+[cosine_delta.png]
 
-All three AI systems fall below the human range on MTLD. DeepL (301) and LaPa (303) are the most impoverished; GPT-5.2 (328) is marginally better but still below every human translator except Dybko. The 18% MTLD gap means AI translations cycle through a narrower vocabulary, producing text that reads as functionally correct but lexically monotonous.
+**Segment-level uniformity.** LaPa (σ = 0.127) and DeepL (σ = 0.132) are the two most uniform systems, maintaining near-constant word count ratios across segments. Human translators vary more — they expand descriptive passages and compress dialogue, adapting to content. AI produces uniformly adequate output without the peaks and valleys that characterize human stylistic choices.
 
-The top-100 word concentration metric tells the complementary story: AI systems concentrate 39.4% of their text in the 100 most common words, vs. 37.7% for humans. They lean more heavily on high-frequency vocabulary.
+[word_ratio.png]
 
-#### 5.4.2 Discourse Particles
+### 5.4 The Preference Reversal
 
-Ukrainian discourse particles (ж, таки, ось, бо, аж, ну, мов, наче, etc.) are pragmatic markers that signal emphasis, surprise, hedging, and speaker attitude. They have no direct English equivalents and must be *added* by the translator based on contextual understanding.
+This is the central experiment. We ran two LLM-as-a-judge experiments (~750 pairwise comparisons each, with rankings stable between the 500- and 750-pair checkpoints) with identical setup except for one variable: the presence of the English source.
 
-GPT-5.2 and DeepL produce approximately 2× fewer discourse particles per thousand tokens than the human average. LaPa partially closes this gap in raw frequency — its Ukrainian fine-tuning increases particle use — but concentrates overwhelmingly on a single particle (та), a telltale sign of pattern memorization rather than genuine pragmatic competence. Human translators distribute their particle usage more evenly across 14–15 distinct types.
+- **Experiment 1 (Translation):** Judge sees the English source + two Ukrainian translations. Prompt: *"Choose the better translation."*
+- **Experiment 2 (Literary):** Judge sees only two Ukrainian sentences. Prompt: *"Choose the one that sounds more literary — as if written by a skilled Ukrainian author."*
 
-#### 5.4.3 Diminutive Morphology
+We compute TrueSkill ratings from each experiment and compare them to metric rankings and human evaluation (1,034 matches). The results are in Table 2; the ranking shifts for AI systems are in Table 3.
 
-Diminutive suffixes (-еньк-, -очк-, -ик, -оньк-, -ечк-) are a core expressive device in Ukrainian prose, conveying affection, irony, intimacy, or contempt depending on context. Their use is a marker of literary craftsmanship.
+| System | Metrics | LLM: Translation | LLM: Literary | Human Eval |
+|--------|:-------:|:-----------------:|:-------------:|:----------:|
+| **GPT-5.2** | **#2** | **#1** (30.3) | **#6** (24.4) | **#5** (25.3) |
+| **DeepL** | **#3** | **#3** (29.2) | **#8** (23.8) | **#2** (26.4) |
+| **LaPa** | **#1** | **#4** (27.4) | **#9** (22.4) | **#7** (24.9) |
+| Stelmakh 2021 | #4 | #2 (29.8) | #2 (28.6) | #1 (27.1) |
+| Shevchuk 1991 | #5 | #5 (26.7) | #3 (26.6) | #3 (26.3) |
+| Drozdovskyi 1991 | #8 | #7 (24.0) | #1 (29.5) | #6 (25.2) |
+| Okolitenko 1992 | #9 | #9 (21.4) | #4 (25.2) | #9 (23.3) |
+| Nosenok 2020 | #7 | #8 (23.5) | #5 (24.7) | #4 (25.3) |
+| Cherniatynskyi 1947 | #6 | #6 (25.0) | #7 (24.3) | #8 (24.1) |
+| Dybko 1984 | #10 | #10 (13.9) | #10 (21.4) | #10 (18.1) |
 
-AI systems average 0.47 diminutives per thousand tokens; humans average 1.23 (excluding Dybko) — a **2.6× gap**. All three AI systems cluster at the bottom of the ranking, below every human translator. The deficit is especially striking for LaPa, which despite being fine-tuned on Ukrainian literary data, produces diminutives at rates indistinguishable from GPT-5.2 and DeepL.
+*Table 2. System rankings across four evaluation paradigms. TrueSkill μ in parentheses. Bold = AI systems. Human eval: 1,034 matches. LLM judges: ~750 pairs each.*
 
-#### 5.4.4 Cosine Delta: Stylistic Fingerprinting
+| AI system | Metric rank | Translation judge | Literary judge | Shift |
+|-----------|:-----------:|:-----------------:|:--------------:|:-----:|
+| GPT-5.2 | #2 | #1 | #6 | ↓5 |
+| DeepL | #3 | #3 | #8 | ↓5 |
+| LaPa | #1 | #4 | #9 | ↓5 |
 
-Cosine Delta (Evert et al., 2017) measures stylometric distance using function-word lemma frequencies — features that are content-independent and reflect authorial or translatorial voice rather than what is being said. Each translation is represented as a vector of function-word lemma relative frequencies (conjunctions, prepositions, particles, pronouns), z-score normalized across all systems, and compared via cosine distance.
+*Table 3. AI rank shifts when the English source is removed from evaluation.*
 
-| System | Mean pairwise Cosine Delta |
-|--------|:---:|
-| Dybko 1984 | 1.160 |
-| Cherniatynskyi 1947 | 1.140 |
-| Drozdovskyi 1991 | 1.137 |
-| Okolitenko 1992 | 1.128 |
-| Stelmakh 2021 | 1.116 |
-| Shevchuk 1991 | 1.103 |
-| Nosenok 2020 | 1.095 |
-| **LaPa** | **1.068** |
-| **GPT-5.2** | **1.059** |
-| **DeepL** | **1.058** |
+The reversal is uniform: every AI system drops exactly five positions when the source is hidden. The top five positions in the literary ranking are all human translators.
 
-*Table 7. Mean pairwise Cosine Delta distance (higher = more stylistically distinct).*
+[trueskill_comparison.png]
 
-AI systems are the most stylistically central — closest to each other and closest to the corpus centroid. They select from the same narrow corner of the function-word space. By contrast, human translators display genuine stylistic diversity: each translator's function-word profile is distinguishable.
+**The Drozdovskyi effect.** The most dramatic individual reversal belongs to Drozdovskyi (1991). He ranks #8 on COMETKiwi-22 (0.693) and #7 on the translation judge — firmly in the bottom half. But on the literary judge, he leaps to #1 (μ = 29.5), surpassing every system including Stelmakh. His translation is rich in discourse particles (10.1/1k — the highest in the corpus) and diminutives (1.36/1k). These are exactly the features metrics penalize and literary judgment rewards. Drozdovskyi is the preference reversal embodied in a single translator.
 
-#### 5.4.5 Segment-Level Uniformity
+**Stelmakh as bridge.** Stelmakh (2021) is the only system that ranks in the top two across every non-metric ranking: #1 in human eval (27.1), #2 in literary judge (28.6), #2 in translation judge (29.8). On metrics, he ranks #4 — the best human. He represents the rare translator whose work satisfies both fidelity-oriented and literary-oriented evaluation: semantically faithful enough for metrics, stylistically rich enough for readers.
 
-We measure the standard deviation of per-segment word count ratios (Ukrainian words / English words) as a proxy for how uniformly each system translates across segments.
+**Human evaluation aligns with neither judge cleanly.** The 1,034-match human evaluation places Stelmakh clearly first (μ = 27.1), but positions #2–#7 form a compressed cluster (μ = 24.9–26.4) with overlapping confidence intervals. DeepL ranks #2 and Shevchuk #3 — both above GPT-5.2 (#5) and LaPa (#7). Humans value fidelity enough to keep DeepL near the top, but not enough to replicate the metric ranking where all three AI systems dominate.
 
-LaPa (σ = 0.127) and DeepL (σ = 0.132) are the two most uniform systems in the corpus. Human translators vary more: they expand descriptive passages and compress dialogue, adapting their translation strategy to the content. The overall pattern — AI segment-level distributions are tighter than human ones — confirms that AI produces uniformly adequate output without the peaks and valleys that characterize human stylistic choices.
-
-### 5.5 The Preference Reversal
-
-The central experiment of this paper tests whether showing or hiding the English source changes the ranking of translations. We ran two LLM-as-a-judge experiments with identical setup except for the prompt:
-
-**Experiment 1 (Translation Quality):** Judge sees the English source + two Ukrainian translations. Prompt: "Choose which translation is better."
-
-**Experiment 2 (Literary Quality):** Judge sees only two Ukrainian sentences. Prompt: "Choose the one that sounds more literary."
-
-| Rank | Metrics (COMETKiwi-22) | LLM: Translation | LLM: Literary | Human Eval (prelim.) |
-|------|:---:|:---:|:---:|:---:|
-| 1 | **LaPa** (0.820) | **GPT-5.2** (30.8) | Stelmakh (29.4) | Stelmakh (27.9) |
-| 2 | **GPT-5.2** (0.812) | Stelmakh (30.1) | Drozdovskyi (28.9) | Shevchuk (26.1) |
-| 3 | **DeepL** (0.805) | **DeepL** (28.9) | Shevchuk (28.5) | **GPT-5.2** (25.9) |
-| 4 | Stelmakh (0.775) | **LaPa** (27.8) | Nosenok (25.6) | **DeepL** (25.9) |
-| 5 | Shevchuk (0.738) | Shevchuk (26.5) | **GPT-5.2** (25.3) | Drozdovskyi (25.4) |
-| 6 | Cherniatynskyi (0.738) | Cherniatynskyi (25.3) | Okolitenko (25.1) | **LaPa** (25.3) |
-| 7 | Nosenok (0.727) | Nosenok (23.6) | Cherniatynskyi (24.0) | Cherniatynskyi (24.0) |
-| 8 | Drozdovskyi (0.693) | Drozdovskyi (23.1) | **DeepL** (22.3) | Nosenok (23.8) |
-| 9 | Okolitenko (0.672) | Okolitenko (21.9) | **LaPa** (21.2) | Okolitenko (23.2) |
-| 10 | Dybko (0.541) | Dybko (13.0) | Dybko (20.0) | Dybko (18.5) |
-
-*Table 8. System rankings across four evaluation paradigms. TrueSkill μ shown for judge/human columns. Bold = AI systems.*
-
-The reversal is clean and dramatic:
-
-**With source visible (Exp. 1):** The LLM judge largely agrees with metrics. GPT-5.2 ranks #1, all three AI systems in the top 4. The judge is measuring what the metrics measure — semantic fidelity to the English original.
-
-**With source hidden (Exp. 2):** AI systems collapse. GPT-5.2 drops from #1 → #5. DeepL drops from #3 → #8. LaPa drops from #4 → #9. Human translators (Stelmakh, Drozdovskyi, Shevchuk) take the top three positions.
-
-**Human evaluation** (preliminary, 449 matches) tracks the literary judge more closely than the translation judge. Stelmakh ranks first in both. AI systems land mid-pack — not terrible, but not top-ranked.
-
-This result demonstrates that what metrics capture (source fidelity + surface fluency) diverges from what constitutes literary quality. The same translations, evaluated with and without access to the source, produce opposite rankings.
-
-### 5.6 Stelmakh and Dybko: Anchoring the Scale
-
-Two translators serve as anchoring points across all evaluation paradigms.
-
-**Stelmakh (2021)** ranks first or second in every non-metric ranking: #1 in human evaluation (μ = 27.9), #1 in the literary LLM judge (μ = 29.4), and #2 in the translation LLM judge (μ = 30.1, behind only GPT-5.2). On metrics, he ranks #4 — the best human. Stelmakh represents the closest approximation to what all evaluation paradigms agree is high quality: semantically faithful enough to score well on metrics, but with sufficient Ukrainian literary voice to satisfy human readers and literary judges.
-
-**Dybko (1984)** ranks last in every paradigm without exception. Her free cultural adaptation — which rewrites rather than translates — serves as a sanity check. That all metrics and all judges agree she is last confirms our evaluation instruments are functioning: they can detect genuinely poor translations. The question is whether they can distinguish among the good ones.
+**Dybko anchors the bottom.** She ranks last in every paradigm without exception — metrics, both LLM judges, and human eval. That all instruments agree she is last confirms they are functioning. The question is not whether they detect bad translations, but whether they can distinguish among the good ones.
 
 ---
 
@@ -355,7 +289,7 @@ Similarly, the discourse particle deficit reveals that AI systems translate *wha
 
 2. **Small system count.** With seven human translations and three AI systems, statistical power for system-level claims is limited. TrueSkill's uncertainty quantification partially mitigates this.
 
-3. **Human evaluation is preliminary.** The 449-match TrueSkill ranking is directionally consistent but below the ~1,000-match threshold for stable confidence intervals.
+3. **Human evaluation mid-pack resolution.** The 1,034-match human eval clearly separates top (Stelmakh) and bottom (Dybko), but positions #2–#7 form a compressed cluster with overlapping confidence intervals (σ ≈ 0.76, spread ≈ 1.5 μ points).
 
 4. **LLM-as-a-judge shares training biases.** GPT-5.2 evaluating GPT-5.2's own output introduces a potential self-preference bias. That the literary judge still demotes AI translations makes this concern less acute, but an independent human-only evaluation is needed for confirmation.
 
@@ -367,7 +301,7 @@ Similarly, the discourse particle deficit reveals that AI systems translate *wha
 
 ## 8. Conclusion
 
-We set out to ask whether MT metrics capture literary translation quality. The answer is no — they capture something related but importantly different. Across seven neural metrics, three AI translations consistently rank at the top. Yet these same translations are lexically impoverished (−18% MTLD), culturally thin (2.6× fewer diminutives, ~2× fewer discourse particles), and converge on near-identical output (LaBSE 0.941). When a judge evaluates the translations without access to the source — judging only whether the text sounds like skilled Ukrainian literary prose — the AI advantage disappears and human translators rise to the top.
+We set out to ask whether MT metrics capture literary translation quality. The answer is no — they capture something related but importantly different. Across seven neural metrics, three AI translations consistently rank at the top. Yet these same translations are lexically impoverished (−18% MTLD), culturally thin (2.6× fewer diminutives, ~2× fewer discourse particles), and converge on near-identical output (LaBSE 0.941). When a judge evaluates the translations without access to the source — judging only whether the text sounds like skilled Ukrainian literary prose — the AI advantage disappears and human translators take the top five positions. The reversal is sharpest for Drozdovskyi (1991), who ranks #8 on metrics but #1 on the literary judge.
 
 The problem is not that the metrics are broken. They accurately measure what they were trained to measure: semantic fidelity to the source and surface fluency in the target. But literary translation requires more than fidelity and fluency. It requires voice, cultural adaptation, and expressive richness — qualities that current metrics cannot detect and that AI systems do not produce.
 
@@ -378,6 +312,7 @@ The convergence of three architecturally distinct AI systems on the same output 
 ## References
 
 - Burrows, J. (2002). 'Delta': A measure of stylistic difference and a guide to likely authorship. *Literary and Linguistic Computing, 17*(3), 267–287.
+- Chaplynskyi, D., & Zakharov, K. (2025). A framework for large-scale parallel corpus evaluation: Ensemble quality estimation models versus human assessment. *Proceedings of the Fourth Ukrainian Natural Language Processing Workshop (UNLP 2025)*, 73–85. ACL.
 - Evert, S., Proisl, T., Jannidis, F., Reger, I., Pielström, S., Schöch, C., & Vitt, T. (2017). Understanding and explaining Delta measures for authorship attribution. *Digital Scholarship in the Humanities, 32*(suppl_2), ii4–ii16.
 - Feng, F., Yang, Y., Cer, D., Arivazhagan, N., & Wang, W. (2022). Language-agnostic BERT sentence embedding. *Proceedings of ACL 2022*.
 - Guerreiro, N. M., Rei, R., Stanton, D., Farinhas, A., Fernandes, P., Martins, A. F. T., & Blunsom, P. (2023). xCOMET: Transparent machine translation evaluation through fine-grained error detection. *arXiv preprint arXiv:2310.10482*.
