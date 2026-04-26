@@ -1,0 +1,66 @@
+{
+  "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+    "mean": 0.7966439080594991,
+    "std": 0.15532583847531886,
+    "median": 0.782608695652174,
+    "n_segments": 1360
+  },
+  "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+    "mean": 1.0199859378892004,
+    "std": 0.5530853702932845,
+    "median": 0.9,
+    "n_segments": 1200
+  },
+  "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+    "mean": 0.9758905200257615,
+    "std": 0.3231770970931011,
+    "median": 0.9090909090909091,
+    "n_segments": 1345
+  },
+  "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+    "mean": 0.723155332847461,
+    "std": 0.17167349839630577,
+    "median": 0.7044159544159545,
+    "n_segments": 1358
+  },
+  "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+    "mean": 0.6919563885439444,
+    "std": 0.23985185615783114,
+    "median": 0.6666666666666666,
+    "n_segments": 1300
+  },
+  "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+    "mean": 0.7387759587225099,
+    "std": 0.20635866216813079,
+    "median": 0.7142857142857143,
+    "n_segments": 1346
+  },
+  "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+    "mean": 0.8395456862910949,
+    "std": 0.18843164987987077,
+    "median": 0.8125,
+    "n_segments": 1357
+  },
+  "gpt_5_2": {
+    "mean": 0.7753482441416624,
+    "std": 0.24565717252468414,
+    "median": 0.75,
+    "n_segments": 1358
+  },
+  "lapa_translations_combine": {
+    "mean": 0.8009225176660226,
+    "std": 0.12734095388808253,
+    "median": 0.7894736842105263,
+    "n_segments": 1359
+  },
+  "deepl": {
+    "mean": 0.784268312499076,
+    "std": 0.1323822918551262,
+    "median": 0.7727272727272727,
+    "n_segments": 1359
+  },
+  "_group_stats": {
+    "ai_mean_std": 0.16846013942263097,
+    "human_mean_std": 0.21413643369509305
+  }
+}

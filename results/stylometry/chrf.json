@@ -1,0 +1,146 @@
+{
+  "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": {
+    "mean_pairwise_chrf": 35.30211449926642,
+    "mean_pairwise_bleu": 8.890228232883793
+  },
+  "UK_1984_Iryna_Dybko_Khutir_tvaryn": {
+    "mean_pairwise_chrf": 23.53347636906167,
+    "mean_pairwise_bleu": 2.3680834212492945
+  },
+  "UK_1991_Oleksii_Drozdovskyi_Skotoferma": {
+    "mean_pairwise_chrf": 33.98184794724186,
+    "mean_pairwise_bleu": 7.290627153341613
+  },
+  "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": {
+    "mean_pairwise_chrf": 36.95680684473356,
+    "mean_pairwise_bleu": 10.73498433013149
+  },
+  "UK_1992_Natalia_Okolitenko_Skotokhutir": {
+    "mean_pairwise_chrf": 31.477841620769816,
+    "mean_pairwise_bleu": 7.724686073228887
+  },
+  "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": {
+    "mean_pairwise_chrf": 35.808009249261595,
+    "mean_pairwise_bleu": 10.576472806357492
+  },
+  "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": {
+    "mean_pairwise_chrf": 38.207374193001435,
+    "mean_pairwise_bleu": 11.851821418345464
+  },
+  "gpt_5_2": {
+    "mean_pairwise_chrf": 42.6976032080688,
+    "mean_pairwise_bleu": 17.03957803838335
+  },
+  "lapa_translations_combine": {
+    "mean_pairwise_chrf": 42.48814376648272,
+    "mean_pairwise_bleu": 17.199880584418885
+  },
+  "deepl": {
+    "mean_pairwise_chrf": 44.049082707365244,
+    "mean_pairwise_bleu": 18.741540751289246
+  },
+  "_pairwise_chrf": {
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1984_Iryna_Dybko_Khutir_tvaryn": 24.033904144736336,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1991_Oleksii_Drozdovskyi_Skotoferma": 29.55473300801098,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 37.2036378330641,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 31.00883451403981,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 34.100367115975786,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 37.185138566626016,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|gpt_5_2": 41.60951306953435,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|lapa_translations_combine": 40.733049316008085,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|deepl": 42.28985292540239,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1991_Oleksii_Drozdovskyi_Skotoferma": 21.442600802138465,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 23.85076382839854,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 22.633577004153167,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 23.561948070620815,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 23.723660067108447,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|gpt_5_2": 24.2793128280609,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|lapa_translations_combine": 23.793481416818373,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|deepl": 24.482039159519978,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 36.21281878412246,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_1992_Natalia_Okolitenko_Skotokhutir": 36.974765716569884,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 35.18630184395684,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 36.426388217400856,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|gpt_5_2": 37.013828682136364,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|lapa_translations_combine": 35.78661029862189,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|deepl": 37.23858417221902,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 33.84153068727843,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 40.81766192719963,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 41.48051752597476,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|gpt_5_2": 40.24495579335277,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|lapa_translations_combine": 38.39127302708031,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|deepl": 40.568102196131036,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 31.428931660407866,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 30.417909967554408,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|gpt_5_2": 32.8975137745995,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|lapa_translations_combine": 31.26855044144668,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|deepl": 32.82896082087861,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 38.92366724857327,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|gpt_5_2": 39.69240627275352,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|lapa_translations_combine": 38.21323715070442,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|deepl": 40.347561953162206,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|gpt_5_2": 45.41342374339965,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|lapa_translations_combine": 44.267515230102646,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|deepl": 46.028147170272895,
+    "gpt_5_2|lapa_translations_combine": 60.204277878821586,
+    "gpt_5_2|deepl": 62.923196829960574,
+    "lapa_translations_combine|deepl": 69.73529913874049
+  },
+  "_pairwise_bleu": {
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1984_Iryna_Dybko_Khutir_tvaryn": 2.879906408884884,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1991_Oleksii_Drozdovskyi_Skotoferma": 5.676782311050811,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 8.524267340942293,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 5.557659779911694,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 7.597768567773976,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 9.67185296362889,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|gpt_5_2": 13.205397933021246,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|lapa_translations_combine": 12.70647999738712,
+    "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn|deepl": 14.191938793353208,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1991_Oleksii_Drozdovskyi_Skotoferma": 1.8596625967490825,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 2.2427215022619453,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 1.8414021254082082,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 2.349549747934771,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 2.4334373213573586,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|gpt_5_2": 2.565121764535147,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|lapa_translations_combine": 2.4608021260972515,
+    "UK_1984_Iryna_Dybko_Khutir_tvaryn|deepl": 2.6801471980150016,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": 6.97565678368066,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_1992_Natalia_Okolitenko_Skotokhutir": 8.43223442165311,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 7.691572721629307,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 8.874153169793848,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|gpt_5_2": 8.846374489405525,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|lapa_translations_combine": 8.047985552316439,
+    "UK_1991_Oleksii_Drozdovskyi_Skotoferma|deepl": 9.211222333795725,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_1992_Natalia_Okolitenko_Skotokhutir": 8.972022694723057,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 15.337013915723665,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 14.777646508981524,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|gpt_5_2": 13.824427416647667,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|lapa_translations_combine": 11.946590104541992,
+    "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn|deepl": 14.014512703680602,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": 9.201227254193837,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 8.019717651032842,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|gpt_5_2": 9.391030455141612,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|lapa_translations_combine": 8.20567142735696,
+    "UK_1992_Natalia_Okolitenko_Skotokhutir|deepl": 9.901208849638662,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": 13.018502349586475,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|gpt_5_2": 13.491790923147999,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|lapa_translations_combine": 12.07851854997407,
+    "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn|deepl": 14.42231122725332,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|gpt_5_2": 16.82250742120995,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|lapa_translations_combine": 15.689313600781293,
+    "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn|deepl": 17.359261778737,
+    "gpt_5_2|lapa_translations_combine": 35.989925983263085,
+    "gpt_5_2|deepl": 39.21962595907793,
+    "lapa_translations_combine|deepl": 47.67363791805176
+  },
+  "_group_stats": {
+    "chrf_ai_ai_mean": 64.28759128250755,
+    "chrf_ai_ai_std": 4.90981371651331,
+    "chrf_hh_mean": 35.384213641117,
+    "chrf_hh_std": 3.6603447802493307,
+    "bleu_ai_ai_mean": 40.96106328679759,
+    "bleu_ai_ai_std": 6.033384963564183,
+    "bleu_hh_mean": 9.2218718956204,
+    "bleu_hh_std": 2.9475984506471624
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "UK_1947_Ivan_Cherniatynskyi_Kolhosp_tvaryn": "System_A",
+  "UK_1984_Iryna_Dybko_Khutir_tvaryn": "System_B",
+  "UK_1991_Oleksii_Drozdovskyi_Skotoferma": "System_C",
+  "UK_1991_Yurii_Shevchuk_Ferma_rai_dlia_tvaryn": "System_D",
+  "UK_1992_Natalia_Okolitenko_Skotokhutir": "System_E",
+  "UK_2020_Bohdana_Nosenok_Kolhosp_tvaryn": "System_F",
+  "UK_2021_Viacheslav_Stelmakh_Kolhosp_tvaryn": "System_G",
+  "gpt_5_2": "System_H",
+  "lapa_translations_combine": "System_I",
+  "deepl": "System_J"
+}
